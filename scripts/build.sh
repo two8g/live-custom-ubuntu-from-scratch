@@ -146,7 +146,7 @@ function build_iso() {
     # memtest86
     sudo cp chroot/boot/memtest86+.bin image/install/memtest86+
 
-    wget --progress=dot https://www.memtest86.com/downloads/memtest86-usb.zip -O image/install/memtest86-usb.zip
+    wget --progress=dot http://rjiicku82.hn-bkt.clouddn.com/memtest86-usb.zip -O image/install/memtest86-usb.zip
     unzip -p image/install/memtest86-usb.zip memtest86-usb.img > image/install/memtest86
     rm -f image/install/memtest86-usb.zip
 
