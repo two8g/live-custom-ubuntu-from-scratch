@@ -11,7 +11,7 @@ export TARGET_UBUNTU_VERSION="jammy"
 
 # The Ubuntu Mirror URL. It's better to change for faster download.
 # More mirrors see: https://launchpad.net/ubuntu/+archivemirrors
-export TARGET_UBUNTU_MIRROR="https://mirrors.ustc.edu.cn/ubuntu/"
+export TARGET_UBUNTU_MIRROR="http://mirrors.ustc.edu.cn/ubuntu/"
 
 # The packaged version of the Linux kernel to install on target image.
 # See https://wiki.ubuntu.com/Kernel/LTSEnablementStack for details
@@ -56,7 +56,7 @@ function customize_image() {
     less \
 
     # custom of me
-    apt-get install -y \
+    apt-get install -y --fix-missing \
     git \
     chromium-browser \
     openjdk-8-jdk \
@@ -75,9 +75,9 @@ function customize_image() {
     #wget http://rjiicku82.hn-bkt.clouddn.com/Ant-slim.tar.xz -O Ant-slim.tar.xz
     wget http://rjiicku82.hn-bkt.clouddn.com/Ant-standard-buttons.tar -O Ant-standard-buttons.tar
     wget http://rjiicku82.hn-bkt.clouddn.com/Ant.tar -O Ant.tar
-    #tar -xf Ant-slim.tar.xz -C /usr/share/themes/
-    tar -f Ant-standard-buttons.tar -C /usr/share/themes/
-    tar -f Ant.tar -C /usr/share/themes/
+    #tar -xzf Ant-slim.tar.xz -C /usr/share/themes/
+    tar -xf Ant-standard-buttons.tar -C /usr/share/themes/
+    tar -xf Ant.tar -C /usr/share/themes/
     gsettings set org.gnome.desktop.interface gtk-theme "Ant"
     gsettings set org.gnome.desktop.wm.preferences theme "Ant"
     rm -f Ant-standard-buttons.tar Ant.tar
