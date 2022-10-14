@@ -71,24 +71,41 @@ function customize_image() {
     #echo 'XMODIFIERS="@im=fcitx"' >> /etc/environment 
     #apt-get purge -y ibus
 
+    # theme ant https://www.gnome-look.org/p/1099856
+    #wget http://rjiicku82.hn-bkt.clouddn.com/Ant-slim.tar.xz -O Ant-slim.tar.xz
+    wget http://rjiicku82.hn-bkt.clouddn.com/Ant-standard-buttons.tar -O Ant-standard-buttons.tar
+    wget http://rjiicku82.hn-bkt.clouddn.com/Ant.tar -O Ant.tar
+    #tar -xf Ant-slim.tar.xz -C /usr/share/themes/
+    tar -f Ant-standard-buttons.tar -C /usr/share/themes/
+    tar -f Ant.tar -C /usr/share/themes/
+    gsettings set org.gnome.desktop.interface gtk-theme "Ant"
+    gsettings set org.gnome.desktop.wm.preferences theme "Ant"
+    rm -f Ant-standard-buttons.tar Ant.tar
+
+
     # purge
     apt-get purge -y \
-    transmission-gtk \
-    transmission-common \
+    aisleriot \
+    brasero \
+    cheese \
+    deja-dup \
+    empathy \
+    gedit* \
     gnome-mahjongg \
     gnome-mines \
+    gnome-orca \
     gnome-sudoku \
-    aisleriot \
     hitori \
     libreoffice* \
-    thunderbird \
-    rhythmbox \
-    deja-dup \
-    remmina \
-    simple-scan \
-    gedit* \
-    gnome-orca \
     onboard \
+    remmina \
+    rhythmbox \
+    simple-scan \
+    thunderbird \
+    totem \
+    transmission-gtk \
+    transmission-common \
+    unity-webapps-common \
     wodim
     
 }
