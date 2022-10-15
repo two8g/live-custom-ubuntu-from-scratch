@@ -300,6 +300,9 @@ do
         dash_flag=true
         continue
     fi
+    if [[ $ii == "chroot_exit" ]]; then
+        chroot_exit_teardown
+    fi
     find_index $ii
     if [[ $dash_flag == false ]]; then
         start_index=$index
