@@ -59,6 +59,7 @@ function customize_image() {
     # custom of me
     apt-get install -y --fix-missing \
     git \
+    neofetch \
     python3-pip \
     openjdk-8-jdk \
     openjdk-8-jre-headless \
