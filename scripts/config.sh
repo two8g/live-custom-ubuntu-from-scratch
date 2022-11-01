@@ -43,7 +43,8 @@ function customize_image() {
     apt-get install -y \
     plymouth-theme-ubuntu-logo \
     ubuntu-gnome-desktop \
-    ubuntu-gnome-wallpapers
+    ubuntu-gnome-wallpapers \
+    unity-control-center
 
     # useful tools
     apt-get install -y \
@@ -53,21 +54,26 @@ function customize_image() {
     curl \
     vim \
     nano \
-    less \
+    less 
 
     # custom of me
     apt-get install -y --fix-missing \
     git \
+    python3-pip \
     openjdk-8-jdk \
-    openjdk-8-jre-headless
+    openjdk-8-jre-headless \
+    libqt5qml5 libqt5quick5 libqt5quickwidgets5 qml-module-qtquick2 \
+    libfuse2
 
     apt-add-repository -y ppa:fish-shell/release-3
     apt install -y fish
     chsh -s /usr/bin/fish
 
-    #apt-get install -y fcitx5 fcitx5-frontend-qt5 libfcitx5-qt-data libfcitx5-qt-dev libfcitx5-qt1 libgsettings-qt1 libqt5qml5 libqt5quick5 libqt5quickwidgets5 qml-module-qtquick2
-    #wget http://rjiicku82.hn-bkt.clouddn.com/sogoupinyin_4.0.1.2800_x86_64.deb -O sogoupinyin.deb
-    #dpkg -i sogoupinyin.deb
+    apt-get install -y fcitx fcitx-frontend-gtk2 fcitx-frontend-gtk3 fcitx-frontend-qt5 fcitx-module-x11
+    wget http://rjiicku82.hn-bkt.clouddn.com/sogoupinyin_4.0.1.2800_x86_64.deb -O sogoupinyin.deb
+    dpkg -i sogoupinyin.deb
+    apt-get install -y fcitx5 fcitx5-frontend-qt5 libfcitx5-qt-data libfcitx5-qt-dev libfcitx5-qt1 libgsettings-qt1 libqt5qml5 libqt5quick5 libqt5quickwidgets5 qml-module-qtquick2
+    rm -f sogoupinyin.deb
     #apt-get install -f -y
     #echo 'GTK_IM_MODULE=fcitx' >> /etc/environment 
     #echo 'QT_IM_MODULE=fcitx' >> /etc/environment 
@@ -85,6 +91,8 @@ function customize_image() {
     gsettings set org.gnome.desktop.wm.preferences theme "Ant"
     rm -f Ant-standard-buttons.tar Ant.tar
 
+    wget http://rjiicku82.hn-bkt.clouddn.com/google-chrome-stable_current_amd64.deb -O google-chrome-stable_current_amd64.deb
+    dpkg -i google-chrome-stable_current_amd64.deb
 
     # purge
     apt-get purge -y \
