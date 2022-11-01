@@ -63,12 +63,11 @@ function customize_image() {
     python3-pip \
     openjdk-8-jdk \
     openjdk-8-jre-headless \
-    libqt5qml5 libqt5quick5 libqt5quickwidgets5 qml-module-qtquick2 \
-    libfuse2
+    libfuse2 \
+    zsh
 
     apt-add-repository -y ppa:fish-shell/release-3
     apt install -y fish
-    chsh -s /usr/bin/fish
 
     apt-get install -y fcitx fcitx-frontend-gtk2 fcitx-frontend-gtk3 fcitx-frontend-qt5 fcitx-module-x11
     wget http://rjiicku82.hn-bkt.clouddn.com/sogoupinyin_4.0.1.2800_x86_64.deb -O sogoupinyin.deb
@@ -92,8 +91,11 @@ function customize_image() {
     gsettings set org.gnome.desktop.wm.preferences theme "Ant"
     rm -f Ant-standard-buttons.tar Ant.tar
 
-    wget http://rjiicku82.hn-bkt.clouddn.com/google-chrome-stable_current_amd64.deb -O google-chrome-stable_current_amd64.deb
-    dpkg -i google-chrome-stable_current_amd64.deb
+    # Install Google Chrome
+    wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+    echo "deb http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list
+    apt-get update
+    apt-get install google-chrome-stable
 
     # purge
     apt-get purge -y \
