@@ -43,8 +43,7 @@ function customize_image() {
     apt-get install -y \
     plymouth-theme-ubuntu-logo \
     ubuntu-gnome-desktop \
-    ubuntu-gnome-wallpapers \
-    unity-control-center
+    ubuntu-gnome-wallpapers
 
     # useful tools
     apt-get install -y \
@@ -72,7 +71,7 @@ function customize_image() {
     apt-get install -y fcitx fcitx-frontend-gtk2 fcitx-frontend-gtk3 fcitx-frontend-qt5 fcitx-module-x11
     wget http://127.0.0.1:8887/sogoupinyin_4.0.1.2800_x86_64.deb -O sogoupinyin.deb
     dpkg -i sogoupinyin.deb
-    apt-get install -y fcitx5 fcitx5-frontend-qt5 libfcitx5-qt-data libfcitx5-qt-dev libfcitx5-qt1 libgsettings-qt1 libqt5qml5 libqt5quick5 libqt5quickwidgets5 qml-module-qtquick2
+    apt-get install -y libgsettings-qt1 libqt5qml5 libqt5quick5 libqt5quickwidgets5 qml-module-qtquick2
     rm -f sogoupinyin.deb
     #apt-get install -f -y
     #echo 'GTK_IM_MODULE=fcitx' >> /etc/environment 
@@ -84,6 +83,9 @@ function customize_image() {
     wget -O google-chrome-stable_current_amd64.deb http://127.0.0.1:8887/google-chrome-stable_current_amd64.deb
     dpkg -i google-chrome-stable_current_amd64.deb
     rm -f google-chrome-stable_current_amd64.deb
+
+    # KVM
+    apt-get -y install cpu-checker virt-manager qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
 
     # purge
     apt-get purge -y \
@@ -109,7 +111,8 @@ function customize_image() {
     transmission-gtk \
     transmission-common \
     unity-webapps-common \
-    wodim
+    wodim \
+    ibus
     
 }
 
