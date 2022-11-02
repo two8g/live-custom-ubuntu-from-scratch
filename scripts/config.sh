@@ -70,7 +70,7 @@ function customize_image() {
     apt install -y fish
 
     apt-get install -y fcitx fcitx-frontend-gtk2 fcitx-frontend-gtk3 fcitx-frontend-qt5 fcitx-module-x11
-    wget http://rjiicku82.hn-bkt.clouddn.com/sogoupinyin_4.0.1.2800_x86_64.deb -O sogoupinyin.deb
+    wget http://127.0.0.1:8887/sogoupinyin_4.0.1.2800_x86_64.deb -O sogoupinyin.deb
     dpkg -i sogoupinyin.deb
     apt-get install -y fcitx5 fcitx5-frontend-qt5 libfcitx5-qt-data libfcitx5-qt-dev libfcitx5-qt1 libgsettings-qt1 libqt5qml5 libqt5quick5 libqt5quickwidgets5 qml-module-qtquick2
     rm -f sogoupinyin.deb
@@ -80,22 +80,10 @@ function customize_image() {
     #echo 'XMODIFIERS="@im=fcitx"' >> /etc/environment 
     #apt-get purge -y ibus
 
-    # theme ant https://www.gnome-look.org/p/1099856
-    #wget http://rjiicku82.hn-bkt.clouddn.com/Ant-slim.tar.xz -O Ant-slim.tar.xz
-    wget http://rjiicku82.hn-bkt.clouddn.com/Ant-standard-buttons.tar -O Ant-standard-buttons.tar
-    wget http://rjiicku82.hn-bkt.clouddn.com/Ant.tar -O Ant.tar
-    #tar -xzf Ant-slim.tar.xz -C /usr/share/themes/
-    tar -xf Ant-standard-buttons.tar -C /usr/share/themes/
-    tar -xf Ant.tar -C /usr/share/themes/
-    gsettings set org.gnome.desktop.interface gtk-theme "Ant"
-    gsettings set org.gnome.desktop.wm.preferences theme "Ant"
-    rm -f Ant-standard-buttons.tar Ant.tar
-
     # Install Google Chrome
-    wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-    echo "deb http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list
-    apt-get update
-    apt-get install google-chrome-stable
+    wget -O google-chrome-stable_current_amd64.deb http://127.0.0.1:8887/google-chrome-stable_current_amd64.deb
+    dpkg -i google-chrome-stable_current_amd64.deb
+    rm -f google-chrome-stable_current_amd64.deb
 
     # purge
     apt-get purge -y \
