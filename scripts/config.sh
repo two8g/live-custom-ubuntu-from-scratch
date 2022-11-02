@@ -87,6 +87,11 @@ function customize_image() {
     # KVM
     apt-get -y install cpu-checker virt-manager qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
 
+    # WPS
+    wget -O wps-office.deb http://127.0.0.1:8887/wps-office_11.1.0.11664.XA_amd64.deb
+    dpkg -i wps-office.deb
+    rm -f wps-office.deb
+
     # purge
     apt-get purge -y \
     aisleriot \
