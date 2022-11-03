@@ -43,7 +43,8 @@ function customize_image() {
     apt-get install -y \
     plymouth-theme-ubuntu-logo \
     ubuntu-gnome-desktop \
-    ubuntu-gnome-wallpapers
+    ubuntu-gnome-wallpapers \
+    gnome-screenshot
 
     # useful tools
     apt-get install -y \
@@ -53,7 +54,9 @@ function customize_image() {
     curl \
     vim \
     nano \
-    less 
+    less \
+	htop \
+	tmux 
 
     # custom of me
     apt-get install -y --fix-missing \
