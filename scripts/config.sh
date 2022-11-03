@@ -56,6 +56,7 @@ function customize_image() {
     nano \
     less \
 	htop \
+    dconf-editor \
 	tmux 
 
     # custom of me
@@ -107,6 +108,7 @@ function customize_image() {
     gnome-mines \
     gnome-orca \
     gnome-sudoku \
+    gnome-todo \
     hitori \
     libreoffice* \
     onboard \
@@ -120,7 +122,8 @@ function customize_image() {
     transmission-common \
     unity-webapps-common \
     wodim \
-    ibus
+    ibus \
+    snapd
     
 }
 

@@ -20,7 +20,7 @@ function help() {
         echo -e $1
         echo
     fi
-    echo -e "Supported commands : ${CMD[*]}"
+    echo -e "Supported commands : ${CMD[*]} chroot_exit"
     echo -e
     echo -e "Syntax: $0 [start_cmd] [-] [end_cmd]"
     echo -e "\trun from start_cmd to end_end"
