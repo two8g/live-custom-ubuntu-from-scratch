@@ -74,6 +74,8 @@ function customize_image() {
 
     apt-add-repository -y ppa:fish-shell/release-3
     apt install -y fish
+	
+	curl -sS https://127.0.0.1:8887/install.sh | sh
 
     apt-get install -y fcitx fcitx-frontend-gtk2 fcitx-frontend-gtk3 fcitx-frontend-qt5 fcitx-module-x11
     wget http://127.0.0.1:8887/sogoupinyin_4.0.1.2800_x86_64.deb -O sogoupinyin.deb
