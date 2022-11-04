@@ -74,7 +74,14 @@ function customize_image() {
 
     apt-add-repository -y ppa:fish-shell/release-3
     apt install -y fish
-	
+
+    mkdir -p /usr/share/fonts/nerd/3270/
+    wget http://127.0.0.1:8887/3270.zip -O 3270.zip
+    unzip 3270.zip -d /usr/share/fonts/nerd/3270/
+    rm -f 3270.zip
+    mkfontdir
+    mkfontscale
+    fc-cache -fv	
 	curl -sS https://127.0.0.1:8887/install.sh | sh
 
     apt-get install -y fcitx fcitx-frontend-gtk2 fcitx-frontend-gtk3 fcitx-frontend-qt5 fcitx-module-x11
