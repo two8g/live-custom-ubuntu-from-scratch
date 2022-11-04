@@ -57,7 +57,7 @@ function customize_image() {
     less \
 	htop \
     dconf-editor \
-	tmux \
+	tmux tmuxinator \
 	btop
 
     # custom of me
@@ -68,7 +68,9 @@ function customize_image() {
     openjdk-8-jdk \
     openjdk-8-jre-headless \
     libfuse2 \
-    zsh
+    zsh \
+    qemu qemu-utils qemu-system-x86 qemu-system-gui \
+    virt-manager libvirt-daemon ovmf
 
     apt-add-repository -y ppa:fish-shell/release-3
     apt install -y fish
