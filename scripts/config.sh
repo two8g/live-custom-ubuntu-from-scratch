@@ -57,7 +57,8 @@ function customize_image() {
     less \
 	htop \
     dconf-editor \
-	tmux 
+	tmux \
+	btop
 
     # custom of me
     apt-get install -y --fix-missing \
