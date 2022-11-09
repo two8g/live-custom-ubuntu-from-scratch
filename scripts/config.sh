@@ -55,10 +55,10 @@ function customize_image() {
     vim \
     nano \
     less \
-	htop \
+    htop \
     dconf-editor \
-	tmux tmuxinator \
-	btop
+    tmux tmuxinator \
+    btop
 
     # custom of me
     apt-get install -y --fix-missing \
@@ -69,11 +69,15 @@ function customize_image() {
     openjdk-8-jre-headless \
     libfuse2 \
     zsh \
-    qemu qemu-utils qemu-system-x86 qemu-system-gui \
-    virt-manager libvirt-daemon ovmf
+    fzf \
+    fd-find
 
     apt-add-repository -y ppa:fish-shell/release-3
     apt install -y fish
+
+    #git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+    fisher install PatrickF1/fzf.fish
 
     mkdir -p /usr/share/fonts/nerd/3270/
     wget http://127.0.0.1:8887/3270.zip -O 3270.zip
@@ -81,8 +85,9 @@ function customize_image() {
     rm -f 3270.zip
     mkfontdir
     mkfontscale
-    fc-cache -fv	
-	# curl -sS https://127.0.0.1:8887/install.sh | sh
+    fc-cache -fv
+    rm -f fonts.dir fonts.scale
+    # curl -sS https://127.0.0.1:8887/install.sh | sh
 
     apt-get install -y fcitx fcitx-frontend-gtk2 fcitx-frontend-gtk3 fcitx-frontend-qt5 fcitx-module-x11
     wget http://127.0.0.1:8887/sogoupinyin_4.0.1.2800_x86_64.deb -O sogoupinyin.deb
@@ -90,9 +95,9 @@ function customize_image() {
     apt-get install -y libgsettings-qt1 libqt5qml5 libqt5quick5 libqt5quickwidgets5 qml-module-qtquick2
     rm -f sogoupinyin.deb
     #apt-get install -f -y
-    #echo 'GTK_IM_MODULE=fcitx' >> /etc/environment 
-    #echo 'QT_IM_MODULE=fcitx' >> /etc/environment 
-    #echo 'XMODIFIERS="@im=fcitx"' >> /etc/environment 
+    echo 'GTK_IM_MODULE=fcitx' >> /etc/environment 
+    echo 'QT_IM_MODULE=fcitx' >> /etc/environment 
+    echo 'XMODIFIERS="@im=fcitx"' >> /etc/environment 
     #apt-get purge -y ibus
 
     # Install Google Chrome
@@ -101,19 +106,25 @@ function customize_image() {
     rm -f google-chrome-stable_current_amd64.deb
 
     # KVM
-    apt-get -y install cpu-checker virt-manager qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
+    apt-get -y install cpu-checker virt-manager qemu qemu-kvm qemu-utils qemu-system-x86 qemu-system-gui \
+	    libvirt-daemon ovmf libvirt-daemon-system libvirt-clients bridge-utils
+    #sudo adduser two8g kvm
+    #sudo adduser two8g libvirt
 
     # WPS
     wget -O wps-office.deb http://127.0.0.1:8887/wps-office_11.1.0.11664.XA_amd64.deb
     dpkg -i wps-office.deb
     rm -f wps-office.deb
 
+    # nodejs
+    curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - &&\
+    apt-get install -y nodejs
+
     # purge
     apt-get purge -y \
     aisleriot \
     brasero \
     cheese \
-    deja-dup \
     empathy \
     gedit* \
     gnome-mahjongg \
@@ -135,7 +146,8 @@ function customize_image() {
     unity-webapps-common \
     wodim \
     ibus \
-    snapd
+    snapd \
+    shotwell shotwell-common 
     
 }
 
