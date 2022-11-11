@@ -76,8 +76,8 @@ function customize_image() {
     apt install -y fish
 
     #git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-    curl -sLO https://git.io/fisher fisher && source fisher && fisher install jorgebucaran/fisher
-    fisher install PatrickF1/fzf.fish
+    #curl -sLO https://git.io/fisher fisher && source fisher && fisher install jorgebucaran/fisher
+    #fisher install PatrickF1/fzf.fish
 
     mkdir -p /usr/share/fonts/nerd/3270/
     wget http://127.0.0.1:8887/3270.zip -O 3270.zip
