@@ -76,7 +76,7 @@ function customize_image() {
     apt install -y fish
 
     #git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-    curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+    curl -sLO https://git.io/fisher fisher && source fisher && fisher install jorgebucaran/fisher
     fisher install PatrickF1/fzf.fish
 
     mkdir -p /usr/share/fonts/nerd/3270/
@@ -88,6 +88,9 @@ function customize_image() {
     fc-cache -fv
     rm -f fonts.dir fonts.scale
     # curl -sS https://127.0.0.1:8887/install.sh | sh
+
+    #echo "deb http://deb.volian.org/volian/ scar main" | tee /etc/apt/sources.list.d/volian-archive-scar-unstable.list; wget -qO - https://deb.volian.org/volian/scar.key | tee /etc/apt/trusted.gpg.d/volian-archive-scar-unstable.gpg
+    #apt update && apt install nala
 
     apt-get install -y fcitx fcitx-frontend-gtk2 fcitx-frontend-gtk3 fcitx-frontend-qt5 fcitx-module-x11
     wget http://127.0.0.1:8887/sogoupinyin_4.0.1.2800_x86_64.deb -O sogoupinyin.deb
