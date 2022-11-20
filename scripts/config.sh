@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # This script provides common customization options for the ISO
-# 
+#
 # Usage: Copy this file to config.sh and make changes there.  Keep this file (default_config.sh) as-is
 #   so that subsequent changes can be easily merged from upstream.  Keep all customiations in config.sh
 
@@ -79,14 +79,14 @@ function customize_image() {
     #curl -sLO https://git.io/fisher fisher && source fisher && fisher install jorgebucaran/fisher
     #fisher install PatrickF1/fzf.fish
 
-    mkdir -p /usr/share/fonts/nerd/3270/
-    wget http://127.0.0.1:8887/3270.zip -O 3270.zip
-    unzip 3270.zip -d /usr/share/fonts/nerd/3270/
-    rm -f 3270.zip
-    mkfontdir
-    mkfontscale
-    fc-cache -fv
-    rm -f fonts.dir fonts.scale
+    #mkdir -p /usr/share/fonts/nerd/3270/
+    #wget http://127.0.0.1:8887/3270.zip -O 3270.zip
+    #unzip 3270.zip -d /usr/share/fonts/nerd/3270/
+    #rm -f 3270.zip
+    #mkfontdir
+    #mkfontscale
+    #fc-cache -fv
+    #rm -f fonts.dir fonts.scale
     # curl -sS https://127.0.0.1:8887/install.sh | sh
 
     #echo "deb http://deb.volian.org/volian/ scar main" | tee /etc/apt/sources.list.d/volian-archive-scar-unstable.list; wget -qO - https://deb.volian.org/volian/scar.key | tee /etc/apt/trusted.gpg.d/volian-archive-scar-unstable.gpg
@@ -98,9 +98,9 @@ function customize_image() {
     apt-get install -y libgsettings-qt1 libqt5qml5 libqt5quick5 libqt5quickwidgets5 qml-module-qtquick2
     rm -f sogoupinyin.deb
     #apt-get install -f -y
-    echo 'GTK_IM_MODULE=fcitx' >> /etc/environment 
-    echo 'QT_IM_MODULE=fcitx' >> /etc/environment 
-    echo 'XMODIFIERS="@im=fcitx"' >> /etc/environment 
+    echo 'GTK_IM_MODULE=fcitx' >> /etc/environment
+    echo 'QT_IM_MODULE=fcitx' >> /etc/environment
+    echo 'XMODIFIERS="@im=fcitx"' >> /etc/environment
     #apt-get purge -y ibus
 
     # Install Google Chrome
@@ -115,13 +115,13 @@ function customize_image() {
     #sudo adduser two8g libvirt
 
     # WPS
-    wget -O wps-office.deb http://127.0.0.1:8887/wps-office_11.1.0.11664.XA_amd64.deb
-    dpkg -i wps-office.deb
-    rm -f wps-office.deb
+    #wget -O wps-office.deb http://127.0.0.1:8887/wps-office_11.1.0.11664.XA_amd64.deb
+    #dpkg -i wps-office.deb
+    #rm -f wps-office.deb
 
     # nodejs
-    curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - &&\
-    apt-get install -y nodejs
+    #curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - &&\
+    #apt-get install -y nodejs
 
     # purge
     apt-get purge -y \
@@ -150,8 +150,8 @@ function customize_image() {
     wodim \
     ibus \
     snapd \
-    shotwell shotwell-common 
-    
+    shotwell shotwell-common
+
 }
 
 # Used to version the configuration.  If breaking changes occur, manual
