@@ -6,6 +6,7 @@ set -u                  # treat unset variable as error
 #set -x
 
 SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
+PINYIN_VERSION="4.0.1.2800"
 
 CMD=(setup_host debootstrap run_chroot build_iso)
 
@@ -119,6 +120,8 @@ function run_chroot() {
     if [[ -f "$SCRIPT_DIR/config.sh" ]]; then
         sudo ln -f $SCRIPT_DIR/config.sh chroot/root/config.sh
     fi
+    sudo cp '/home/two8g/Downloads/sogoupinyin_'$PINYIN_VERSION'_x86_64.deb' chroot/root/sogoupinyin.deb
+    sudo cp /home/two8g/Downloads/google-chrome-stable_current_amd64.deb chroot/root/chrome.deb
 
     # Launch into chroot environment to build install image.
     sudo chroot chroot /usr/bin/env DEBIAN_FRONTEND=${DEBIAN_FRONTEND:-readline} /root/chroot_build.sh -

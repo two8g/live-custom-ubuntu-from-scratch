@@ -34,6 +34,33 @@ export TARGET_PACKAGE_REMOVE="
     discover \
     laptop-detect \
     os-prober \
+    aisleriot \
+    brasero \
+    cheese \
+    empathy \
+    gedit* \
+    gnome-mahjongg \
+    gnome-mines \
+    gnome-orca \
+    gnome-sudoku \
+    gnome-todo \
+    hitori \
+    libreoffice* \
+    onboard \
+    remmina \
+    rhythmbox \
+    simple-scan \
+    thunderbird \
+    totem \
+    terminator \
+    transmission-gtk \
+    transmission-common \
+    unity-webapps-common \
+    wodim \
+    ibus \
+    snapd \
+    shotwell shotwell-common
+
 "
 
 # Package customisation function.  Update this function to customize packages
@@ -92,11 +119,15 @@ function customize_image() {
     #echo "deb http://deb.volian.org/volian/ scar main" | tee /etc/apt/sources.list.d/volian-archive-scar-unstable.list; wget -qO - https://deb.volian.org/volian/scar.key | tee /etc/apt/trusted.gpg.d/volian-archive-scar-unstable.gpg
     #apt update && apt install nala
 
+    dpkg -i /root/chrome.deb
+    rm -f /root/chrome.deb
+
+
     apt-get install -y fcitx fcitx-frontend-gtk2 fcitx-frontend-gtk3 fcitx-frontend-qt5 fcitx-module-x11
-    wget http://127.0.0.1:8887/sogoupinyin_4.0.1.2800_x86_64.deb -O sogoupinyin.deb
-    dpkg -i sogoupinyin.deb
+    #wget http://127.0.0.1:8887/sogoupinyin_4.0.1.2800_x86_64.deb -O sogoupinyin.deb
+    dpkg -i /root/sogoupinyin.deb
     apt-get install -y libgsettings-qt1 libqt5qml5 libqt5quick5 libqt5quickwidgets5 qml-module-qtquick2
-    rm -f sogoupinyin.deb
+    rm -f /root/sogoupinyin.deb
     #apt-get install -f -y
     echo 'GTK_IM_MODULE=fcitx' >> /etc/environment
     echo 'QT_IM_MODULE=fcitx' >> /etc/environment
@@ -104,13 +135,13 @@ function customize_image() {
     #apt-get purge -y ibus
 
     # Install Google Chrome
-    wget -O google-chrome-stable_current_amd64.deb http://127.0.0.1:8887/google-chrome-stable_current_amd64.deb
-    dpkg -i google-chrome-stable_current_amd64.deb
-    rm -f google-chrome-stable_current_amd64.deb
+    #wget -O google-chrome-stable_current_amd64.deb http://127.0.0.1:8887/google-chrome-stable_current_amd64.deb
+    #dpkg -i /root/chrome.deb
+    #rm -f /root/chrome.deb
 
     # KVM
     apt-get -y install cpu-checker virt-manager qemu qemu-kvm qemu-utils qemu-system-x86 qemu-system-gui \
-	    libvirt-daemon ovmf libvirt-daemon-system libvirt-clients bridge-utils
+    libvirt-daemon ovmf libvirt-daemon-system libvirt-clients bridge-utils
     #sudo adduser two8g kvm
     #sudo adduser two8g libvirt
 
