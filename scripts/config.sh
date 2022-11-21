@@ -84,7 +84,7 @@ function customize_image() {
     less \
     htop \
     dconf-editor \
-    tmux tmuxinator \
+    tmux\
     btop
 
     # custom of me
