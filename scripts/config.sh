@@ -122,22 +122,13 @@ function customize_image() {
     dpkg -i /root/chrome.deb
     rm -f /root/chrome.deb
 
-
     apt-get install -y fcitx fcitx-frontend-gtk2 fcitx-frontend-gtk3 fcitx-frontend-qt5 fcitx-module-x11
-    #wget http://127.0.0.1:8887/sogoupinyin_4.0.1.2800_x86_64.deb -O sogoupinyin.deb
     dpkg -i /root/sogoupinyin.deb
     apt-get install -y libgsettings-qt1 libqt5qml5 libqt5quick5 libqt5quickwidgets5 qml-module-qtquick2
     rm -f /root/sogoupinyin.deb
-    #apt-get install -f -y
     echo 'GTK_IM_MODULE=fcitx' >> /etc/environment
     echo 'QT_IM_MODULE=fcitx' >> /etc/environment
     echo 'XMODIFIERS="@im=fcitx"' >> /etc/environment
-    #apt-get purge -y ibus
-
-    # Install Google Chrome
-    #wget -O google-chrome-stable_current_amd64.deb http://127.0.0.1:8887/google-chrome-stable_current_amd64.deb
-    #dpkg -i /root/chrome.deb
-    #rm -f /root/chrome.deb
 
     # KVM
     apt-get -y install cpu-checker virt-manager qemu qemu-kvm qemu-utils qemu-system-x86 qemu-system-gui \
@@ -167,21 +158,22 @@ function customize_image() {
     gnome-sudoku \
     gnome-todo \
     hitori \
+    ibus \
     libreoffice* \
     onboard \
     remmina \
     rhythmbox \
+    shotwell shotwell-common \
     simple-scan \
+    snapd \
     thunderbird \
     totem \
     terminator \
     transmission-gtk \
     transmission-common \
     unity-webapps-common \
-    wodim \
-    ibus \
-    snapd \
-    shotwell shotwell-common
+    wpagui \
+    wodim 
 
 }
 

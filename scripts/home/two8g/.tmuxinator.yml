@@ -1,13 +1,12 @@
 name: default
-root: ~/
 windows:
   - default:
-      layout: e648,211x58,0,0{130x58,0,0,0,80x58,131,0[80x33,131,0,2,80x24,131,34,3]}
+      layout: 69ec,211x58,0,0{130x58,0,0,3,80x58,131,0[80x29,131,0,7,80x28,131,30,8]
       panes:
         - 
         - 
         - btop
   - remote:
-      layout: c95e,211x57,0,0,1
+      layout: cd61,211x58,0,0,4
       panes:
         -
