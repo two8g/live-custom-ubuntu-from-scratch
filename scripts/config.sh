@@ -59,7 +59,9 @@ export TARGET_PACKAGE_REMOVE="
     wodim \
     ibus \
     snapd \
-    shotwell shotwell-common
+    shotwell shotwell-common \
+    gnome-remote-desktop \
+    gnome-system-monitor
 
 "
 
@@ -84,8 +86,7 @@ function customize_image() {
     less \
     htop \
     dconf-editor \
-    tmux\
-    btop
+    tmux
 
     # custom of me
     apt-get install -y --fix-missing \
@@ -174,7 +175,10 @@ function customize_image() {
     transmission-common \
     unity-webapps-common \
     wpagui \
-    wodim 
+    wodim \
+    gnome-remote-desktop \
+    remote-viewer \
+    gnome-system-monitor
 
 }
 
