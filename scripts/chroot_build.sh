@@ -136,6 +136,7 @@ function install_pkg() {
     apt-get autoremove -y
 
     # final touch
+    export DEBIAN_FRONTEND=noninteractive
     dpkg-reconfigure locales
     dpkg-reconfigure resolvconf
 
