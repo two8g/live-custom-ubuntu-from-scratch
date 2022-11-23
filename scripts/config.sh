@@ -119,6 +119,7 @@ function customize_image() {
     #echo "deb http://deb.volian.org/volian/ scar main" | tee /etc/apt/sources.list.d/volian-archive-scar-unstable.list; wget -qO - https://deb.volian.org/volian/scar.key | tee /etc/apt/trusted.gpg.d/volian-archive-scar-unstable.gpg
     #apt update && apt install nala
 
+    sudo apt install -y libgl1-mesa-glx
     dpkg -i /root/chrome.deb
     rm -f /root/chrome.deb
 
