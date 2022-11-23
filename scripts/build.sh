@@ -121,7 +121,7 @@ function run_chroot() {
         sudo ln -f $SCRIPT_DIR/config.sh chroot/root/config.sh
     fi
     sudo cp '/home/two8g/Downloads/sogoupinyin_'$PINYIN_VERSION'_x86_64.deb' chroot/root/sogoupinyin.deb
-    sudo cp /home/two8g/Downloads/google-chrome-stable_current_amd64.deb chroot/root/chrome.deb
+    sudo cp /home/two8g/Downloads/chromium_106.0.5249.119_linuxmint1+elsie_amd64.deb chroot/root/chrome.deb
 
     # Launch into chroot environment to build install image.
     sudo chroot chroot /usr/bin/env DEBIAN_FRONTEND=${DEBIAN_FRONTEND:-readline} /root/chroot_build.sh -
