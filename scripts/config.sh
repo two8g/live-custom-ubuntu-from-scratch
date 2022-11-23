@@ -103,23 +103,6 @@ function customize_image() {
     apt-add-repository -y ppa:fish-shell/release-3
     apt install -y fish
 
-    #git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-    #curl -sLO https://git.io/fisher fisher && source fisher && fisher install jorgebucaran/fisher
-    #fisher install PatrickF1/fzf.fish
-
-    #mkdir -p /usr/share/fonts/nerd/3270/
-    #wget http://127.0.0.1:8887/3270.zip -O 3270.zip
-    #unzip 3270.zip -d /usr/share/fonts/nerd/3270/
-    #rm -f 3270.zip
-    #mkfontdir
-    #mkfontscale
-    #fc-cache -fv
-    #rm -f fonts.dir fonts.scale
-    # curl -sS https://127.0.0.1:8887/install.sh | sh
-
-    #echo "deb http://deb.volian.org/volian/ scar main" | tee /etc/apt/sources.list.d/volian-archive-scar-unstable.list; wget -qO - https://deb.volian.org/volian/scar.key | tee /etc/apt/trusted.gpg.d/volian-archive-scar-unstable.gpg
-    #apt update && apt install nala
-
     sudo apt install -y libgl1-mesa-glx
     dpkg -i /root/chrome.deb
     rm -f /root/chrome.deb
@@ -135,17 +118,6 @@ function customize_image() {
     # KVM
     apt-get -y install cpu-checker virt-manager qemu qemu-kvm qemu-utils qemu-system-x86 qemu-system-gui \
     libvirt-daemon ovmf libvirt-daemon-system libvirt-clients bridge-utils
-    #sudo adduser two8g kvm
-    #sudo adduser two8g libvirt
-
-    # WPS
-    #wget -O wps-office.deb http://127.0.0.1:8887/wps-office_11.1.0.11664.XA_amd64.deb
-    #dpkg -i wps-office.deb
-    #rm -f wps-office.deb
-
-    # nodejs
-    #curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - &&\
-    #apt-get install -y nodejs
 
     # purge
     apt-get purge -y \
