@@ -119,39 +119,6 @@ function customize_image() {
     apt-get -y install cpu-checker virt-manager qemu qemu-kvm qemu-utils qemu-system-x86 qemu-system-gui \
     libvirt-daemon ovmf libvirt-daemon-system libvirt-clients bridge-utils
 
-    # purge
-    apt-get purge -y \
-    aisleriot \
-    brasero \
-    cheese \
-    empathy \
-    gedit* \
-    gnome-mahjongg \
-    gnome-mines \
-    gnome-orca \
-    gnome-sudoku \
-    gnome-todo \
-    hitori \
-    ibus \
-    libreoffice* \
-    onboard \
-    remmina \
-    rhythmbox \
-    shotwell shotwell-common \
-    simple-scan \
-    snapd \
-    thunderbird \
-    totem \
-    terminator \
-    transmission-gtk \
-    transmission-common \
-    unity-webapps-common \
-    wpagui \
-    wodim \
-    gnome-remote-desktop \
-    remote-viewer \
-    gnome-system-monitor
-
 }
 
 # Used to version the configuration.  If breaking changes occur, manual
